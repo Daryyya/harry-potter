@@ -383,6 +383,10 @@ h1, h2, h3, h4, h5, h6 {
   color: red;
 }
 
+* {
+  font-family: "Inter", sans-serif;
+}
+
 body {
   background-color: #f5f5f5;
 }
@@ -430,7 +434,7 @@ hr {
     margin-bottom: 14px;
   }
   .header__subtitle {
-    max-width: 290px;
+    max-width: 312px;
     font-size: 16px;
     line-height: 28px;
   }

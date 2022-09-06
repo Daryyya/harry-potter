@@ -1,0 +1,23 @@
+.header {
+    &__title {
+        margin-top: 64px;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 77.45px;
+        letter-spacing: -2%;
+        color: #000;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 36px;
+        color: #000;
+    }
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    background-color: #DEE2E6;
+}

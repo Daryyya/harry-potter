@@ -1,0 +1,43 @@
+.form {
+
+    display: flex;
+    gap: 20px;
+    margin-top: 48px;
+    margin-bottom: 40px;
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #818182;
+    }
+
+    &__input-id-name {
+        width: 452px;
+        height: 38px;
+        border: 1px solid #CED4DA;
+        border-radius: 4px;
+        background-color: #fff;
+        padding: 9px 17px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        
+        &::-webkit-input-placeholder {
+            color:#ABB5BE;
+         }
+    }
+
+    &__select-id-school {
+        width: 216px;
+        height: 38px;
+        border: 1px solid #CED4DA;
+        border-radius: 4px;
+        background-color: #fff;
+        padding: 9px 17px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #ABB5BE;
+    }
+}

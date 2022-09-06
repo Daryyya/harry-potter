@@ -11,6 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">
+                Harry Potter
+            </h1>
+            <h2 class="header__subtitle">
+                View all characters from the Harry Potter universe
+            </h2>
+            <form class="form" action="#">
+                    <label class="form__label" for="name">
+                        Name
+                        <input  class="form__input-id-name" type="text" id="name" placeholder="Hermion">
+                    </label>
+                    
+                    <label class="form__label" for="school">
+                        School
+                        <select class="form__select-id-school" name="school" id="school">
+                            <option checked value="one">Choose one</option>
+                            <option value="two">Choose two</option>
+                            <option value="three">Choose three</option>
+                        </select>
+                    </label>
+            </form>
+        </div>
+        <hr>
+    </header>
 </body>
 </html>

@@ -41,3 +41,22 @@
         color: #ABB5BE;
     }
 }
+
+
+@media (max-width: 768px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+        &__label {
+            display: flex;
+            flex-direction: column;
+        }
+        &__input-id-name {
+            width: 320px;
+        }
+        &__select-id-school {
+            width: 320px;
+        }
+    }
+    
+}

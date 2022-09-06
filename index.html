@@ -13,29 +13,82 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="header__title">
-                Harry Potter
-            </h1>
-            <h2 class="header__subtitle">
-                View all characters from the Harry Potter universe
-            </h2>
-            <form class="form" action="#">
-                    <label class="form__label" for="name">
-                        Name
-                        <input  class="form__input-id-name" type="text" id="name" placeholder="Hermion">
-                    </label>
-                    
-                    <label class="form__label" for="school">
-                        School
-                        <select class="form__select-id-school" name="school" id="school">
-                            <option checked value="one">Choose one</option>
-                            <option value="two">Choose two</option>
-                            <option value="three">Choose three</option>
-                        </select>
-                    </label>
-            </form>
+            <div class="header__wrapper">
+                <h1 class="header__title">
+                    Harry Potter
+                </h1>
+                <h2 class="header__subtitle">
+                    View all characters from the Harry Potter universe
+                </h2>
+                <form class="form" action="#">
+                        <label class="form__label" for="name">
+                            Name
+                            <input  class="form__input-id-name" type="text" id="name" placeholder="Hermion">
+                        </label>
+                        
+                        <label class="form__label" for="school">
+                            School
+                            <select class="form__select-id-school" name="school" id="school">
+                                <option checked value="one">Choose one</option>
+                                <option value="two">Choose two</option>
+                                <option value="three">Choose three</option>
+                            </select>
+                        </label>
+                </form>
+            </div>
         </div>
         <hr>
     </header>
+    <main>
+        <div class="container">
+            <div class="wrapper">
+                <div class="card">
+                    <div class="card__img">
+                        <img src="./img/card-1.png" alt="Hermione Granger" width="334" height="192">
+                    </div>
+                    <div class="card__wrapper">
+                        <h3 class="card__title">
+                            Hermione Granger 
+                        </h3>
+                        <p class="card__info">Actor: Emma Watson</p>
+                        <p class="card__info">Gender: female</p>
+                        <p class="card__info">House: Gryffindor</p>
+                        <p class="card__info">Wand core: dragon heartstring</p>
+                        <p class="card__info">Alive: yes</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__img">
+                        <img src="./img/card-2.png" alt="Draco Malfoy" width="334" height="192">
+                    </div>
+                    <div class="card__wrapper">
+                        <h3 class="card__title">
+                            Draco Malfoy
+                        </h3>
+                        <p class="card__info">Actor: Tom Felton</p>
+                        <p class="card__info">Gender: male</p>
+                        <p class="card__info">House: Slytherin</p>
+                        <p class="card__info">Wand core: unicorn tail-hair</p>
+                        <p class="card__info">Alive: yes</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__img">
+                        <img src="./img/card-1.png" alt="Hermione Granger" width="334" height="192">
+                    </div>
+                    <div class="card__wrapper">
+                        <h3 class="card__title">
+                            Hermione Granger 
+                        </h3>
+                        <p class="card__info">Actor: Emma Watson</p>
+                        <p class="card__info">Gender: female</p>
+                        <p class="card__info">House: Gryffindor</p>
+                        <p class="card__info">Wand core: dragon heartstring</p>
+                        <p class="card__info">Alive: yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,0 +1,40 @@
+.wrapper {
+    padding: 40px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+
+    background-color: #fff;
+    outline: 1px solid #DEE2E6;
+    border-radius: 4px;
+
+    &__wrapper {
+        padding: 24px;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24.2px;
+        color: #152536;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #152536;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        margin: 0 auto ;
+        max-width: 320px;
+    }
+}

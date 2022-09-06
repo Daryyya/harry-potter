@@ -31,10 +31,22 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .wrapper {
         flex-direction: column;
         margin: 0 auto ;
         max-width: 320px;
+    }
+    .card {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+        max-width: 300px;
+    }
+    .card {
+        max-width: 300px;
     }
 }

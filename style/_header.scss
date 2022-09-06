@@ -1,8 +1,12 @@
 .header {
     display: flex;
     flex-direction: column;
+
+    &__wrapper {
+        padding: 64px 0 40px 0;
+    }
+
     &__title {
-        margin-top: 64px;
         font-weight: 700;
         font-size: 64px;
         line-height: 77.45px;
@@ -15,6 +19,7 @@
         font-size: 21px;
         line-height: 36px;
         color: #000;
+        margin-bottom: 48px;
     }
 }
 
@@ -40,5 +45,6 @@ hr {
         max-width: 312px;
         font-size: 16px;
         line-height: 28px;
+        margin-bottom: 28px;
     }
 }

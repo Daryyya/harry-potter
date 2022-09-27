@@ -1,5 +1,7 @@
 import {data} from './hp.js';
 
+const wrapper = document.querySelector('.wrapper');
+
 function createCard (el) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -54,8 +56,6 @@ function createCard (el) {
 
     return card;
 }
-
-const wrapper = document.querySelector('.wrapper');
 
 data.forEach ((el) => {
     wrapper.append(createCard(el));

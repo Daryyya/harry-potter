@@ -7,6 +7,7 @@ function createCard (el) {
     card.className = 'card';
 
     const img = document.createElement('img');
+    img.className = 'image';
     img.src = el.image;
     img.width = 334;
     img.height = 192;

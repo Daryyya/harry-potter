@@ -519,10 +519,6 @@ hr {
 .card__wrapper {
   padding: 24px;
 }
-.card__img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .card__title {
   font-weight: 800;
   font-size: 20px;
@@ -535,6 +531,11 @@ hr {
   line-height: 28px;
   color: #152536;
   max-width: 285px;
+}
+
+.image {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 767px) {

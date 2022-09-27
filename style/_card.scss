@@ -15,11 +15,9 @@
         padding: 24px;
     }
 
-    &__img {
-        img {
-            object-fit: cover;
-        }
-    }
+    // &__img {
+        
+    // }
 
     &__title {
         font-weight: 800;
@@ -36,6 +34,10 @@
         max-width: 285px;
         
     }
+}
+
+.image {
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {

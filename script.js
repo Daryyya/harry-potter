@@ -58,6 +58,38 @@ function createCard (el) {
     return card;
 }
 
-data.forEach ((el) => {
-    wrapper.append(createCard(el));
+showCard(data);
+
+let selectEl = document.querySelector('select');
+
+function createOption (el) {
+    let option = document.createElement('option');
+    option.textContent = el.house
+    option.value = el.house;
+    return option;
+}
+
+function showCard (arr) {
+    arr.forEach(el => wrapper.append(createCard(el)))
+}
+
+data.forEach(el => {
+    selectEl.append(createOption(el));
 })
+
+
+let select = document.querySelector('select');
+
+console.log(select);
+
+select.addEventListener('change', serchCard);
+
+function serchCard (event) {
+    let value = event.target.value;
+    alert(typeof value);
+    let sortArr = data.filter(el => el.house.includes(value))
+
+    wrapper.innerHTML = '';
+    showCard(sortArr);
+
+}

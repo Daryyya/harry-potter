@@ -91,31 +91,42 @@ console.log(select, input);
 select.addEventListener('change', serchCard);
 input.addEventListener('input', serchCard);
 
-function serchCard (event) {
+// function serchCard (event) {
     
-    let selectValue = select.value;
-    let inputValue = input.value.trim();
+//     let selectValue = select.value;
+//     let inputValue = input.value.trim();
+
+//     wrapper.innerHTML = '';
+
+//     if (!selectValue && !inputValue) {
+//         showCard(data);
+//     }
+
+//     else if (selectValue && !inputValue) {
+//         let sortArr = data.filter(el => el.house.includes(selectValue));
+//         showCard(sortArr);
+//     }
+
+//     else if (!selectValue && inputValue) {
+//         let inputSortArr = data.filter(el => el.name.toLowerCase().includes(inputValue));
+//         showCard(inputSortArr);
+//     }
+
+//     else {
+//         let firstSort = data.filter(el => el.house.includes(selectValue)).filter(el => el.name.toLowerCase().includes(inputValue));
+//         showCard(firstSort);
+//     }
+// }
+
+function serchCard () {
+    let selectValue = select.value.toLowerCase();
+    let inputValue = input.value.toLowerCase().trim();
 
     wrapper.innerHTML = '';
 
-    if (!selectValue && !inputValue) {
-        showCard(data);
-    }
-
-    else if (selectValue && !inputValue) {
-        let sortArr = data.filter(el => el.house.includes(selectValue));
-        showCard(sortArr);
-    }
-
-    else if (!selectValue && inputValue) {
-        let inputSortArr = data.filter(el => el.name.toLowerCase().includes(inputValue));
-        showCard(inputSortArr);
-    }
-
-    else {
-        let firstSort = data.filter(el => el.house.includes(selectValue)).filter(el => el.name.toLowerCase().includes(inputValue));
-        showCard(firstSort);
-    }
+    let newArr = data.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
+    console.log(newArr);
+    showCard(newArr);
 }
 
 

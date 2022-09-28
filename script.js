@@ -60,36 +60,62 @@ function createCard (el) {
 
 showCard(data);
 
-let selectEl = document.querySelector('select');
+// let selectEl = document.querySelector('select');
 
-function createOption (el) {
-    let option = document.createElement('option');
-    option.textContent = el.house
-    option.value = el.house;
-    return option;
-}
+// function createOption (el) {
+//     let option = document.createElement('option');
+//     option.textContent = el.house
+//     option.value = el.house;
+//     return option;
+// }
 
 function showCard (arr) {
     arr.forEach(el => wrapper.append(createCard(el)))
 }
 
-data.forEach(el => {
-    selectEl.append(createOption(el));
-})
+
+
+
+
+// data.forEach(el => {
+//     selectEl.append(createOption(el));
+// })
 
 
 let select = document.querySelector('select');
 
-console.log(select);
+let input = document.querySelector('input');
+
+console.log(select, input);
 
 select.addEventListener('change', serchCard);
+input.addEventListener('input', serchCard);
 
 function serchCard (event) {
-    let value = event.target.value;
-    alert(typeof value);
-    let sortArr = data.filter(el => el.house.includes(value))
+    
+    let selectValue = select.value;
+    let inputValue = input.value.trim();
 
     wrapper.innerHTML = '';
-    showCard(sortArr);
 
+    if (!selectValue && !inputValue) {
+        showCard(data);
+    }
+
+    else if (selectValue && !inputValue) {
+        let sortArr = data.filter(el => el.house.includes(selectValue));
+        showCard(sortArr);
+    }
+
+    else if (!selectValue && inputValue) {
+        let inputSortArr = data.filter(el => el.name.toLowerCase().includes(inputValue));
+        showCard(inputSortArr);
+    }
+
+    else {
+        let firstSort = data.filter(el => el.house.includes(selectValue)).filter(el => el.name.toLowerCase().includes(inputValue));
+        showCard(firstSort);
+    }
 }
+
+

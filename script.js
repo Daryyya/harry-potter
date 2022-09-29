@@ -1,8 +1,9 @@
-import {data} from './hp.js';
+// import {data} from './hp.js';
 
 const wrapper = document.querySelector('.wrapper');
 const select = document.querySelector('select');
 const input = document.querySelector('input');
+const url = 'http://hp-api.herokuapp.com/api/characters';
 
 function createCard (el) {
     const card = document.createElement('div');
@@ -89,21 +90,31 @@ function showOption (arr) {
     })
 }
 
-function serchCard () {
+function serchCard (arr) {
     let selectValue = select.value.toLowerCase();
     let inputValue = input.value.toLowerCase().trim();
 
     wrapper.innerHTML = '';
 
-    let newArr = data.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
+    let newArr = arr.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
     console.log(newArr);
     showCard(newArr);
 }
 
-showCard(data);
-showOption(data);
-select.addEventListener('change', serchCard);
-input.addEventListener('input', serchCard);
+function mainFunc (data) {
+    showCard(data);
+    showOption(data);
+    select.addEventListener('change', () => serchCard(data));
+    input.addEventListener('input', () => serchCard(data));
+}
+
+
+
+let getData = fetch(url);
+
+getData
+    .then(response => response.json())
+    .then(data => mainFunc(data))
 
 // function serchCard (event) {
     

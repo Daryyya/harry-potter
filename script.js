@@ -60,33 +60,48 @@ function createCard (el) {
 
 showCard(data);
 
-// let selectEl = document.querySelector('select');
+let selectEl = document.querySelector('select');
 
-// function createOption (el) {
-//     let option = document.createElement('option');
-//     option.textContent = el.house
-//     option.value = el.house;
-//     return option;
-// }
+function createOption (el) {
+    let option = document.createElement('option');
+    option.value = el;
+    if (option.value === '') {
+        option.textContent = 'All';
+        option.setAttribute("selected", "selected");
+    }
+    else {
+        option.textContent = el;
+    }
+    
+    
+    return option;
+}
 
 function showCard (arr) {
-    arr.forEach(el => wrapper.append(createCard(el)))
+    arr.forEach(el => {
+        wrapper.append(createCard(el))
+    })
 }
 
 
 
+function getOption (arr) {
+    let sort = [];
+    arr.map(el => sort.push(el.house));
+    return [...new Set(sort)];
+}
 
 
-// data.forEach(el => {
-//     selectEl.append(createOption(el));
-// })
+getOption(data).forEach(el => {
+    selectEl.append(createOption(el));
+})
 
 
 let select = document.querySelector('select');
 
 let input = document.querySelector('input');
 
-console.log(select, input);
+// console.log(select, input);
 
 select.addEventListener('change', serchCard);
 input.addEventListener('input', serchCard);

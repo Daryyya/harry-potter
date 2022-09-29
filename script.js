@@ -1,6 +1,8 @@
 import {data} from './hp.js';
 
 const wrapper = document.querySelector('.wrapper');
+const select = document.querySelector('select');
+const input = document.querySelector('input');
 
 function createCard (el) {
     const card = document.createElement('div');
@@ -57,11 +59,6 @@ function createCard (el) {
 
     return card;
 }
-
-showCard(data);
-
-let selectEl = document.querySelector('select');
-
 function createOption (el) {
     let option = document.createElement('option');
     option.value = el;
@@ -76,33 +73,35 @@ function createOption (el) {
     
     return option;
 }
-
+function getUniqueValueForOption (arr) {
+    let allSchools = arr.map(el => el.house);
+    let uniqueSchools = [...new Set(allSchools)]
+    return(uniqueSchools);
+}
 function showCard (arr) {
     arr.forEach(el => {
         wrapper.append(createCard(el))
     })
 }
-
-
-
-function getOption (arr) {
-    let sort = [];
-    arr.map(el => sort.push(el.house));
-    return [...new Set(sort)];
+function showOption (arr) {
+    getUniqueValueForOption(arr).forEach(el => {
+        select.append(createOption(el));
+    })
 }
 
+function serchCard () {
+    let selectValue = select.value.toLowerCase();
+    let inputValue = input.value.toLowerCase().trim();
 
-getOption(data).forEach(el => {
-    selectEl.append(createOption(el));
-})
+    wrapper.innerHTML = '';
 
+    let newArr = data.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
+    console.log(newArr);
+    showCard(newArr);
+}
 
-let select = document.querySelector('select');
-
-let input = document.querySelector('input');
-
-// console.log(select, input);
-
+showCard(data);
+showOption(data);
 select.addEventListener('change', serchCard);
 input.addEventListener('input', serchCard);
 
@@ -133,15 +132,11 @@ input.addEventListener('input', serchCard);
 //     }
 // }
 
-function serchCard () {
-    let selectValue = select.value.toLowerCase();
-    let inputValue = input.value.toLowerCase().trim();
 
-    wrapper.innerHTML = '';
-
-    let newArr = data.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
-    console.log(newArr);
-    showCard(newArr);
-}
+// function getOption (arr) {
+//     let sort = [];
+//     arr.map(el => sort.push(el.house));
+//     return [...new Set(sort)];
+// }
 
 

@@ -6,7 +6,7 @@
 }
 
 .card {
-
+    
     background-color: #fff;
     outline: 1px solid #DEE2E6;
     border-radius: 4px;
@@ -38,6 +38,8 @@
 
 .image {
     object-fit: cover;
+    width: 100%;
+    min-width: 334px;
 }
 
 @media (max-width: 767px) {
@@ -49,6 +51,9 @@
     .card {
         max-width: 320px;
     }
+    .image {
+        min-width: 320px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -57,5 +62,8 @@
     }
     .card {
         max-width: 300px;
+    }
+    .image {
+        min-width: 300px;
     }
 }

@@ -536,6 +536,8 @@ hr {
 .image {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  min-width: 334px;
 }
 
 @media (max-width: 767px) {
@@ -547,6 +549,9 @@ hr {
   .card {
     max-width: 320px;
   }
+  .image {
+    min-width: 320px;
+  }
 }
 @media (max-width: 375px) {
   .wrapper {
@@ -554,5 +559,8 @@ hr {
   }
   .card {
     max-width: 300px;
+  }
+  .image {
+    min-width: 300px;
   }
 }/*# sourceMappingURL=style.css.map */

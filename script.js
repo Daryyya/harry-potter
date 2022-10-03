@@ -3,7 +3,7 @@
 const wrapper = document.querySelector('.wrapper');
 const select = document.querySelector('select');
 const input = document.querySelector('input');
-const url = 'http://hp-api.herokuapp.com/api/characters';
+const url = 'http://localhost:3000/get/hp';
 
 function createCard (el) {
     const card = document.createElement('div');
@@ -55,7 +55,7 @@ function createCard (el) {
     wrapper.append(wand);
     wrapper.append(alive);
 
-    card.append(img);
+    card.append(divImg);
     card.append(wrapper);
 
     return card;
@@ -96,7 +96,9 @@ function serchCard (arr) {
 
     wrapper.innerHTML = '';
 
-    let newArr = arr.filter(el => el.name.toLowerCase().includes(inputValue)).filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
+    let newArr = arr
+        .filter(el => el.name.toLowerCase().includes(inputValue))
+        .filter(el => el.house.toLowerCase() === selectValue || selectValue === '');
     console.log(newArr);
     showCard(newArr);
 }
@@ -114,7 +116,7 @@ let getData = fetch(url);
 
 getData
     .then(response => response.json())
-    .then(data => mainFunc(data))
+    .then(data => mainFunc(JSON.parse(data)))
 
 // function serchCard (event) {
     
